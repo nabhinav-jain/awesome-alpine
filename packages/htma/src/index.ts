@@ -11,7 +11,7 @@ const _hasHTMA = (el: object): el is { [$htma]: HXBinding } => $htma in el;
 export const HTMA: PluginCallback = (Alpine) => {
   const elementMap = new WeakMap<HTMLElement, HXBinding>();
   Alpine.addInitSelector(
-    () => '[hx-get], [hx-post], [hx-put], [hx-delete] ,[hx-patch]',
+    () => '[hx-get], [hx-post], [hx-put], [hx-delete],[hx-patch]',
   );
   Alpine.mapAttributes((attr) => {
     if (attr.name.startsWith('hx-'))
